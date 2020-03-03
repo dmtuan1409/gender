@@ -11,7 +11,7 @@ df_sex = df['sex']
 cv = CountVectorizer()
 X = cv.fit_transform(df_feature)
 print(cv.get_feature_names())
-x_train, x_test, y_train, y_test = train_test_split(X, df_feature, test_size=0.25, random_state=50)
+x_train, x_test, y_train, y_test = train_test_split(X, df_sex, test_size=0.25, random_state=50)
 NB = MultinomialNB()
 NB.fit(x_train, y_train)
 result = NB.predict(x_test)
